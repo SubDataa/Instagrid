@@ -16,6 +16,7 @@
 		63727C6626FC975100582C5B /* InstagridTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63727C6526FC975100582C5B /* InstagridTests.swift */; };
 		63727C7026FC975100582C5B /* InstagridUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63727C6F26FC975100582C5B /* InstagridUITests.swift */; };
 		63727C7226FC975100582C5B /* InstagridUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63727C7126FC975100582C5B /* InstagridUITestsLaunchTests.swift */; };
+		63727C8526FCB58700582C5B /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63727C8426FCB58700582C5B /* Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		63727C6B26FC975100582C5B /* InstagridUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstagridUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63727C6F26FC975100582C5B /* InstagridUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagridUITests.swift; sourceTree = "<group>"; };
 		63727C7126FC975100582C5B /* InstagridUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagridUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		63727C8426FCB58700582C5B /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +101,12 @@
 		63727C4D26FC975000582C5B /* Instagrid */ = {
 			isa = PBXGroup;
 			children = (
+				63727C8126FC978500582C5B /* Controller */,
+				63727C8026FC977E00582C5B /* View */,
+				63727C7E26FC976B00582C5B /* Model */,
 				63727C4E26FC975000582C5B /* AppDelegate.swift */,
 				63727C5026FC975000582C5B /* SceneDelegate.swift */,
-				63727C5226FC975000582C5B /* ViewController.swift */,
-				63727C5426FC975000582C5B /* Main.storyboard */,
 				63727C5726FC975100582C5B /* Assets.xcassets */,
-				63727C5926FC975100582C5B /* LaunchScreen.storyboard */,
 				63727C5C26FC975100582C5B /* Info.plist */,
 			);
 			path = Instagrid;
@@ -125,6 +127,31 @@
 				63727C7126FC975100582C5B /* InstagridUITestsLaunchTests.swift */,
 			);
 			path = InstagridUITests;
+			sourceTree = "<group>";
+		};
+		63727C7E26FC976B00582C5B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				63727C8426FCB58700582C5B /* Image.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		63727C8026FC977E00582C5B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				63727C5926FC975100582C5B /* LaunchScreen.storyboard */,
+				63727C5426FC975000582C5B /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		63727C8126FC978500582C5B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				63727C5226FC975000582C5B /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63727C5326FC975000582C5B /* ViewController.swift in Sources */,
+				63727C8526FCB58700582C5B /* Image.swift in Sources */,
 				63727C4F26FC975000582C5B /* AppDelegate.swift in Sources */,
 				63727C5126FC975000582C5B /* SceneDelegate.swift in Sources */,
 			);
@@ -455,7 +483,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -482,7 +510,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
