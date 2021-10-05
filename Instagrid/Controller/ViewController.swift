@@ -12,23 +12,24 @@ import UIKit
         
         let image = Image()
         
-        @IBOutlet var image1: UIImageView!
+        
+        @IBOutlet weak var image1: UIImageView!
         @IBOutlet weak var image2: UIImageView!
         @IBOutlet weak var image3: UIImageView!
         @IBOutlet weak var image4: UIImageView!
-        @IBOutlet weak var image5: UIImageView!
-        @IBOutlet weak var image6: UIImageView!
-        @IBOutlet weak var image7: UIImageView!
-        @IBOutlet weak var image8: UIImageView!
-        @IBOutlet weak var image9: UIImageView!
-        @IBOutlet weak var image10: UIImageView!
         
-        
-        
+        @IBOutlet weak var viewLayout2: UIView!
+        @IBOutlet weak var viewLayout1: UIView!
+        @IBOutlet weak var viewLayout3: UIView!
+        @IBOutlet weak var viewLayout4: UIView!
         
         var imagePicker = UIImagePickerController()
         var selectedImage: UIImageView!
-
+      
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            // Do any additional setup after loading the view.
+        }
    
 
         @IBAction func setPicture(_ sender: UIButton) {
@@ -45,62 +46,38 @@ import UIKit
             case 4:
                 setPicture(button: sender)
                 selectedImage = image4
-            case 5:
-                setPicture(button: sender)
-                selectedImage = image5
-            case 6:
-                setPicture(button: sender)
-                selectedImage = image6
-            case 7:
-                setPicture(button: sender)
-                selectedImage = image7
-            case 8:
-                setPicture(button: sender)
-                selectedImage = image8
-            case 9:
-                setPicture(button: sender)
-                selectedImage = image9
-            case 10:
-                setPicture(button: sender)
-                selectedImage = image10
             default:
                 break
             }
         }
         
+
         @IBAction func selectedLayout(_ sender: UIButton) {
             switch sender.tag {
             case 1:
-                image.selectedButton(button: sender, view: viewLayout1, hiddenView1: viewLayout2, hiddenView2: viewLayout3)
+                image.selectedButton(button: sender)
+                viewLayout2.isHidden = true
+                viewLayout4.isHidden = false
             case 2:
-                image.selectedButton(button: sender, view: viewLayout2, hiddenView1: viewLayout1, hiddenView2: viewLayout3)
+                image.selectedButton(button: sender)
+                viewLayout2.isHidden = false
+                viewLayout4.isHidden = true
             case 3:
-                image.selectedButton(button: sender, view: viewLayout3, hiddenView1: viewLayout1, hiddenView2: viewLayout2)
-            default:
+                image.selectedButton(button: sender)
+                viewLayout2.isHidden = false
+                viewLayout4.isHidden = false
+               default:
                 break
             }
         }
-        
-        
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            // Do any additional setup after loading the view.
-        }
-        
-        
-        // Layout
-        
-        @IBOutlet weak var viewLayout2: UIView!
-        @IBOutlet weak var viewLayout1: UIView!
-        @IBOutlet weak var viewLayout3: UIView!
-
+     
         
         func setPicture(button: UIButton) {
             if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
                 imagePicker.delegate = self
                 imagePicker.sourceType = .photoLibrary
                 imagePicker.allowsEditing = false
-                button.isHidden = true
+                button.isOpaque = false
 
                 present(imagePicker, animated: true, completion: nil)
             }
