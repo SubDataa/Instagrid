@@ -77,17 +77,17 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAh-kb-SNf">
                                                 <rect key="frame" x="0.0" y="0.0" width="138" height="138"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G8S-aR-4Sq">
-                                                        <rect key="frame" x="0.0" y="0.0" width="138" height="138"/>
-                                                    </imageView>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbe-UE-xNb">
                                                         <rect key="frame" x="0.0" y="0.0" width="138" height="138"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="Plus"/>
                                                         <connections>
-                                                            <action selector="setPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Njw-qa-7ai"/>
+                                                            <action selector="setPictureAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dIy-9O-FZK"/>
                                                         </connections>
                                                     </button>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G8S-aR-4Sq">
+                                                        <rect key="frame" x="0.0" y="0.0" width="138" height="138"/>
+                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
@@ -106,17 +106,17 @@
                                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ior-Dp-5nA">
                                                 <rect key="frame" x="146" y="0.0" width="138" height="138"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NRe-i7-3p1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="138" height="138"/>
-                                                    </imageView>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yO-5t-G7G">
                                                         <rect key="frame" x="50.5" y="55.5" width="37.5" height="27.5"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="Plus"/>
                                                         <connections>
-                                                            <action selector="setPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sWa-cv-GQb"/>
+                                                            <action selector="setPictureAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vap-Sj-43C"/>
                                                         </connections>
                                                     </button>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NRe-i7-3p1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="138" height="138"/>
+                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
@@ -147,7 +147,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="Plus"/>
                                                         <connections>
-                                                            <action selector="setPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ne4-8M-Duw"/>
+                                                            <action selector="setPictureAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yvp-S2-pBw"/>
                                                         </connections>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ePx-xi-Gbg">
@@ -175,7 +175,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="Plus"/>
                                                         <connections>
-                                                            <action selector="setPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0nT-fE-sGl"/>
+                                                            <action selector="setPictureAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tJf-QB-0Uz"/>
                                                         </connections>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FxW-pk-Gmu">
@@ -249,7 +249,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="buttonsLayout" destination="8DM-I0-ePn" id="ZQD-rJ-TlN"/>
                         <outlet property="image1" destination="G8S-aR-4Sq" id="vzu-QE-xok"/>
                         <outlet property="image2" destination="NRe-i7-3p1" id="gAn-qE-jfc"/>
                         <outlet property="image3" destination="ePx-xi-Gbg" id="UEC-XW-teu"/>

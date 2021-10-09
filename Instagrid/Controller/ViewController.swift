@@ -32,7 +32,7 @@ import UIKit
         }
    
 
-        @IBAction func setPicture(_ sender: UIButton) {
+        @IBAction func setPictureAction(_ sender: UIButton) {
             switch sender.tag {
             case 1:
                 setPicture(button: sender)
@@ -77,7 +77,7 @@ import UIKit
                 imagePicker.delegate = self
                 imagePicker.sourceType = .photoLibrary
                 imagePicker.allowsEditing = false
-                button.isOpaque = false
+
 
                 present(imagePicker, animated: true, completion: nil)
             }
