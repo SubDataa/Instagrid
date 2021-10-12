@@ -10,25 +10,30 @@ import UIKit
     class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
         
-        let image = Image()
+        private let image = Image()
         
-        @IBOutlet weak var ViewImage: UIView!
+        @IBOutlet private weak var ViewImage: UIView!
         
-        @IBOutlet weak var image1: UIImageView!
-        @IBOutlet weak var image2: UIImageView!
-        @IBOutlet weak var image3: UIImageView!
-        @IBOutlet weak var image4: UIImageView!
+        @IBOutlet private weak var image1: UIImageView!
+        @IBOutlet private weak var image2: UIImageView!
+        @IBOutlet private weak var image3: UIImageView!
+        @IBOutlet private weak var image4: UIImageView!
         
-        @IBOutlet weak var viewLayout2: UIView!
-        @IBOutlet weak var viewLayout1: UIView!
-        @IBOutlet weak var viewLayout3: UIView!
-        @IBOutlet weak var viewLayout4: UIView!
+        @IBOutlet private weak var viewLayout2: UIView!
+        @IBOutlet private weak var viewLayout1: UIView!
+        @IBOutlet private weak var viewLayout3: UIView!
+        @IBOutlet private weak var viewLayout4: UIView!
         
-        @IBOutlet var buttonsLayout: [UIButton]!
+        @IBOutlet private weak var button1: UIButton!
+        @IBOutlet private weak var button2: UIButton!
+        @IBOutlet private weak var button3: UIButton!
         
-        var imagePicker = UIImagePickerController()
-        var selectedImage: UIImageView!
-        let btnImage = UIImage(named: "Selected")
+        
+        private var imagePicker = UIImagePickerController()
+        private var selectedImage: UIImageView!
+        private let btnImage = UIImage(named: "Selected")
+    
+    
         
 
         
@@ -36,20 +41,20 @@ import UIKit
             super.viewDidLoad()
             let topSwipe = UIPanGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
             let leftSwipe = UIPanGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
-
-
-                view.addGestureRecognizer(topSwipe)
-                view.addGestureRecognizer(leftSwipe)
+            view.addGestureRecognizer(topSwipe)
+            view.addGestureRecognizer(leftSwipe)
         }
     
-        @objc func handleSwipes(_ sender:UIPanGestureRecognizer) {
+        @objc private func handleSwipes(_ sender:UIPanGestureRecognizer) {
                 
             let translation = sender.translation(in: ViewImage)
             let translationTransform = CGAffineTransform(translationX: 0, y: translation.y)
+            
             ViewImage.transform = translationTransform
             
+
             
-            if translation.y < -300 {
+            if translation.y < ViewImage.bounds.midY - UIScreen.main.bounds.midY {
                 self.shareImage()
                }
             
@@ -64,7 +69,8 @@ import UIKit
         }
 
         
-        @IBAction func setPictureAction(_ sender: UIButton) {
+        @IBAction private func setPictureAction(_ sender: UIButton) {
+          
             switch sender.tag {
             case 1:
                 setPicture(button: sender)
@@ -84,30 +90,34 @@ import UIKit
         }
         
 
-        @IBAction func selectedLayout(_ sender: UIButton) {
+        @IBAction private func selectedLayout(_ sender: UIButton) {
+          if sender.isTouchInside == true {
+              sender.setBackgroundImage(btnImage, for: UIControl.State.normal)
+        }
             switch sender.tag {
             case 1:
-                image.selectedButton(button: sender)
+                //image.selectedButton(button: sender)
                 viewLayout2.isHidden = true
                 viewLayout4.isHidden = false
-                sender.setImage(btnImage, for: .normal)
+                sender.setBackgroundImage(btnImage, for: UIControl.State.normal)
+               
             case 2:
-                image.selectedButton(button: sender)
+                //image.selectedButton(button: sender)
                 viewLayout2.isHidden = false
                 viewLayout4.isHidden = true
-                sender.setImage(btnImage, for: .normal)
+
             case 3:
-                image.selectedButton(button: sender)
+                //image.selectedButton(button: sender)
                 viewLayout2.isHidden = false
                 viewLayout4.isHidden = false
-                sender.setImage(btnImage, for: .normal)
-               default:
+                //sender.setBackgroundImage(btnImage, for: .normal)
+            default:
                 break
             }
         }
      
         
-        func setPicture(button: UIButton) {
+        private func setPicture(button: UIButton) {
             if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
                 imagePicker.delegate = self
                 imagePicker.sourceType = .photoLibrary
@@ -118,7 +128,7 @@ import UIKit
             }
         }
 
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             picker.dismiss(animated: true, completion: nil)
             if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
                 selectedImage.image = image
@@ -126,7 +136,7 @@ import UIKit
 
         }
         
-        func shareImage() {
+        private func shareImage() {
             let img = [UIImage.init(view: self.ViewImage)]
             let ac = UIActivityViewController(activityItems: img, applicationActivities: nil)
             present(ac, animated: true)
