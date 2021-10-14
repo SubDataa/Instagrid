@@ -28,13 +28,17 @@ import UIKit
         @IBOutlet private weak var button2: UIButton!
         @IBOutlet private weak var button3: UIButton!
         
+        @IBOutlet weak var swipeLabel: UILabel!
+        @IBOutlet weak var arrowImg: UIImageView!
+        
         
         private var imagePicker = UIImagePickerController()
         private var selectedImage: UIImageView!
         let btnImage = UIImage(named: "Selected")
+        let arrowLandscape = UIImage(named: "Arrow Left")
     
     
-        
+    
 
         
         override func viewDidLoad() {
@@ -43,20 +47,35 @@ import UIKit
            // let leftSwipe = UIPanGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
           //  view.addGestureRecognizer(topSwipe)
            // view.addGestureRecognizer(leftSwipe)
-            //view.addSubview(ViewImage)
+ 
             
             let swipeTop = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(_:)))
             swipeTop.direction = .up
             self.ViewImage.addGestureRecognizer(swipeTop)
+            landscape()
         }
+    
+        
+      private func landscape() {
+            if UIDevice.current.orientation.isLandscape {
+                arrowImg.image = arrowLandscape
+                swipeLabel.text = "Swipe Left to share"
+            }
+        }
+        
+        
+
+
+   
         @objc private func didSwipe(_ gesture: UISwipeGestureRecognizer) {
             
-            var view = ViewImage.frame
-            view.origin.y = -view.size.height
+            var frame = ViewImage.frame
+            frame.origin.y = -frame.size.height
             UIView.animate(withDuration: 0.3) {
-                self.ViewImage.frame = view
+                self.ViewImage.frame = frame
                 self.shareImage()
               }
+            
         }
 //        @objc private func handleSwipes(_ sender:UIPanGestureRecognizer) {
 //
@@ -83,7 +102,7 @@ import UIKit
 
         
         @IBAction private func setPictureAction(_ sender: UIButton) {
-          
+            
             switch sender.tag {
             case 1:
                 setPicture(button: sender)
@@ -110,6 +129,7 @@ import UIKit
             button1.isSelected = false
             button2.isSelected = false
             button3.isSelected = false
+            
             switch sender.tag {
             case 1:
                 //image.selectedButton(button: sender)
