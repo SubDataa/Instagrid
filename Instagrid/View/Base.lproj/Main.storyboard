@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -21,11 +20,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Instagrid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Layout 1" translatesAutoresizingMaskIntoConstraints="NO" id="2NO-8M-L86">
-                                <rect key="frame" x="751" y="57" width="58" height="58"/>
+                                <rect key="frame" x="43" y="515" width="58" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2NO-8M-L86" secondAttribute="height" multiplier="1:1" id="4nR-nX-7qB"/>
                                     <constraint firstAttribute="height" constant="58" id="avm-Qc-Bp1"/>
@@ -33,7 +32,7 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Layout 2" translatesAutoresizingMaskIntoConstraints="NO" id="Epz-hq-mNr">
-                                <rect key="frame" x="751" y="178" width="58" height="58"/>
+                                <rect key="frame" x="271" y="515" width="58" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Epz-hq-mNr" secondAttribute="height" multiplier="1:1" id="0Wa-cR-e6o"/>
                                     <constraint firstAttribute="width" secondItem="Epz-hq-mNr" secondAttribute="height" multiplier="1:1" id="5zN-hc-7D0"/>
@@ -67,7 +66,7 @@
                                 </variation>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Layout 3" translatesAutoresizingMaskIntoConstraints="NO" id="ebE-W0-ndU">
-                                <rect key="frame" x="751" y="308" width="58" height="58"/>
+                                <rect key="frame" x="499" y="515" width="58" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="58" id="3h0-F4-tmo"/>
                                     <constraint firstAttribute="width" secondItem="ebE-W0-ndU" secondAttribute="height" multiplier="1:1" id="7Y4-de-CCM"/>
@@ -75,7 +74,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reS-Oq-aS9">
-                                <rect key="frame" x="751" y="57" width="58" height="58"/>
+                                <rect key="frame" x="43" y="515" width="58" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="reS-Oq-aS9" secondAttribute="height" multiplier="1:1" id="LGZ-2J-9Bf"/>
                                     <constraint firstAttribute="height" constant="58" id="th7-y1-K6i"/>
@@ -85,7 +84,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe up to share" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r56-Nj-rVk">
-                                <rect key="frame" x="78" y="197" width="145" height="21"/>
+                                <rect key="frame" x="232" y="99" width="136" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="r56-Nj-rVk" secondAttribute="height" multiplier="136:21" id="2Q7-qk-S8P"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="BZt-wr-Zwy"/>
@@ -113,7 +112,7 @@
                                 </variation>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="anq-Bw-Be3">
-                                <rect key="frame" x="298" y="57" width="300" height="300"/>
+                                <rect key="frame" x="150" y="150" width="300" height="300"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Sei-sm-QL0">
                                         <rect key="frame" x="8" y="8" width="284" height="138"/>
@@ -263,7 +262,7 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Arrow Up" translatesAutoresizingMaskIntoConstraints="NO" id="SCd-VI-Gwf">
-                                <rect key="frame" x="122" y="172" width="49" height="17"/>
+                                <rect key="frame" x="275.5" y="69" width="49" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="9UW-od-VNR"/>
                                     <constraint firstAttribute="width" constant="49" id="N6v-jF-JOk"/>
@@ -294,7 +293,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3kZ-1H-sET">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3kZ-1H-sET">
                                 <rect key="frame" x="751" y="178" width="58" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="1mr-lG-yvV"/>
@@ -305,7 +304,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIO-bW-UMi">
-                                <rect key="frame" x="382" y="12" width="132.5" height="37"/>
+                                <rect key="frame" x="234" y="19" width="132.5" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="bKm-hm-m49"/>
                                 </constraints>
@@ -314,7 +313,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8DM-I0-ePn">
-                                <rect key="frame" x="751" y="308" width="58" height="58"/>
+                                <rect key="frame" x="499" y="515" width="58" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="dFq-vm-vwt"/>
                                     <constraint firstAttribute="width" secondItem="8DM-I0-ePn" secondAttribute="height" multiplier="1:1" id="j5d-8o-g1V"/>
@@ -526,7 +525,6 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="ViewImage" destination="anq-Bw-Be3" id="2IH-j1-gfc"/>
                         <outlet property="arrowImg" destination="SCd-VI-Gwf" id="PTb-co-DF9"/>
                         <outlet property="button1" destination="reS-Oq-aS9" id="LE9-nz-ZMo"/>
                         <outlet property="button2" destination="3kZ-1H-sET" id="yJJ-Kj-dJn"/>
@@ -536,6 +534,7 @@
                         <outlet property="image3" destination="ePx-xi-Gbg" id="UEC-XW-teu"/>
                         <outlet property="image4" destination="FxW-pk-Gmu" id="FCx-JY-e3C"/>
                         <outlet property="swipeLabel" destination="r56-Nj-rVk" id="51I-RB-e3G"/>
+                        <outlet property="viewImage" destination="anq-Bw-Be3" id="2IH-j1-gfc"/>
                         <outlet property="viewLayout1" destination="Ior-Dp-5nA" id="SQw-fD-Azn"/>
                         <outlet property="viewLayout2" destination="hAh-kb-SNf" id="h62-7C-Td4"/>
                         <outlet property="viewLayout3" destination="pN1-zR-ZxK" id="kWB-nN-OMc"/>

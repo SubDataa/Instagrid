@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     //MARK:- Outlets
-    @IBOutlet private weak var ViewImage: UIView! // pas de majuscule au debut d'un nom de variable
+    @IBOutlet private weak var viewImage: UIView!
     
     @IBOutlet private weak var image1: UIImageView!
     @IBOutlet private weak var image2: UIImageView!
@@ -22,7 +22,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet private weak var viewLayout3: UIView!
     @IBOutlet private weak var viewLayout4: UIView!
     
-    @IBOutlet private weak var button1: UIButton! //template1Button
+    @IBOutlet private weak var button1: UIButton!
     @IBOutlet private weak var button2: UIButton!
     @IBOutlet private weak var button3: UIButton!
     
@@ -41,16 +41,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //configureGesture()
+    
         //Swipe up gesture
         let swipeTop = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(_:)))
         swipeTop.direction = .up
-        self.ViewImage.addGestureRecognizer(swipeTop)
+        self.viewImage.addGestureRecognizer(swipeTop)
         //left swipe gesture
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(_:)))
         swipeLeft.direction = .left
-        self.ViewImage.addGestureRecognizer(swipeLeft)
+        self.viewImage.addGestureRecognizer(swipeLeft)
         
         
         //Default layout
@@ -77,7 +76,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     // MARK: - Animation swipe
     @objc private func didSwipe(_ gesture: UISwipeGestureRecognizer) {
-        var frame = ViewImage.frame
+        var frame = viewImage.frame
         if UIDevice.current.orientation.isLandscape {
             frame.origin.x = -frame.size.height
         } else {
@@ -85,7 +84,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         
         UIView.animate(withDuration: 0.3) {
-            self.ViewImage.frame = frame
+            self.viewImage.frame = frame
             self.shareImage()
             
         }
@@ -163,14 +162,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     private func shareImage() {
-        let img = [UIImage.init(view: self.ViewImage)]
+        let img = [UIImage.init(view: self.viewImage)]
         let ac = UIActivityViewController(activityItems: img, applicationActivities: nil)
         
         // When UIActivityViewController is closed, reverse animation
         ac.completionWithItemsHandler = { (activityType: UIActivity.ActivityType?, completed:
                                             Bool, arrayReturnedItems: [Any]?, error: Error?) in
             UIView.animate(withDuration: 0.3) {
-                self.ViewImage.center = self.view.center
+                self.viewImage.center = self.view.center
             }
         }
         present(ac, animated: true)
