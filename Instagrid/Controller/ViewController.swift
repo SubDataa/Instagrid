@@ -36,7 +36,7 @@ import UIKit
         private var selectedImage: UIImageView!
         let btnImage = UIImage(named: "Selected")
         let arrowLandscape = UIImage(named: "Arrow Left")
-    
+        let arrowPortrait = UIImage(named: "Arrow Up")
     
     
 
@@ -48,58 +48,50 @@ import UIKit
           //  view.addGestureRecognizer(topSwipe)
            // view.addGestureRecognizer(leftSwipe)
  
-            
+            //Swipe up gesture
             let swipeTop = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(_:)))
             swipeTop.direction = .up
             self.ViewImage.addGestureRecognizer(swipeTop)
-            landscape()
-        }
+            //left swipe gesture
+            let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(_:)))
+            swipeLeft.direction = .left
+            self.ViewImage.addGestureRecognizer(swipeLeft)
     
-        
-      private func landscape() {
-            if UIDevice.current.orientation.isLandscape {
-                arrowImg.image = arrowLandscape
-                swipeLabel.text = "Swipe Left to share"
-            }
         }
-        
-        
+// MARK : Detection Landscape / Portrait
+   override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+            coordinator.animate(alongsideTransition: { context in
+                if UIDevice.current.orientation.isLandscape {
+                    self.arrowImg.image = self.arrowLandscape
+                    self.swipeLabel.text = "Swipe Left to share"
+                } else {
+                    self.arrowImg.image = self.arrowPortrait
+                    self.swipeLabel.text = "Swipe up to share"
+                }
+            })
+        }
 
-
-   
+// MARK - Animation swipe
         @objc private func didSwipe(_ gesture: UISwipeGestureRecognizer) {
-            
-            var frame = ViewImage.frame
-            frame.origin.y = -frame.size.height
-            UIView.animate(withDuration: 0.3) {
-                self.ViewImage.frame = frame
-                self.shareImage()
+            if UIDevice.current.orientation.isLandscape {
+                var frame = ViewImage.frame
+                frame.origin.x = -frame.size.height
+                UIView.animate(withDuration: 0.3) {
+                    self.ViewImage.frame = frame
+                    self.shareImage()
+                    
+                }
+            } else {
+                var frame = ViewImage.frame
+                frame.origin.y = -frame.size.height
+                UIView.animate(withDuration: 0.3) {
+                    self.ViewImage.frame = frame
+                    self.shareImage()
+                    
               }
+            }
             
         }
-//        @objc private func handleSwipes(_ sender:UIPanGestureRecognizer) {
-//
-//            let translation = sender.translation(in: ViewImage)
-//            let translationTransform = CGAffineTransform(translationX: 0, y: translation.y)
-//
-//            ViewImage.transform = translationTransform
-//
-//
-//
-//            if translation.y < ViewImage.bounds.midY - UIScreen.main.bounds.midY {
-//                self.shareImage()
-//               }
-//
-//            UIView.animate(withDuration: 1.5, animations: {
-//                self.ViewImage.transform = translationTransform
-//            }, completion:nil)
-//
-//            UIView.animate(withDuration: 0.5, animations: {
-//                       self.ViewImage.transform = .identity
-//                   }, completion:nil)
-//
-//        }
-
         
         @IBAction private func setPictureAction(_ sender: UIButton) {
             
@@ -177,10 +169,19 @@ import UIKit
         private func shareImage() {
             let img = [UIImage.init(view: self.ViewImage)]
             let ac = UIActivityViewController(activityItems: img, applicationActivities: nil)
+            
+            // When UIActivityViewController reverse animation
+            ac.completionWithItemsHandler = { (activityType: UIActivity.ActivityType?, completed:
+            Bool, arrayReturnedItems: [Any]?, error: Error?) in
+                UIView.animate(withDuration: 0.3) {
+                    self.ViewImage.center = self.view.center
+                }
+            }
             present(ac, animated: true)
            
-            
         }
+            
+        
         
 }
 

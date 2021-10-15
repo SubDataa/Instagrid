@@ -17,6 +17,8 @@
 		63727C7026FC975100582C5B /* InstagridUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63727C6F26FC975100582C5B /* InstagridUITests.swift */; };
 		63727C7226FC975100582C5B /* InstagridUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63727C7126FC975100582C5B /* InstagridUITestsLaunchTests.swift */; };
 		63727C8526FCB58700582C5B /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63727C8426FCB58700582C5B /* Image.swift */; };
+		63C341ED271898B8000DBE2A /* Bella Safira.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63C341EC271898B8000DBE2A /* Bella Safira.otf */; };
+		63C341EF27189921000DBE2A /* coolvetica rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63C341EE27189921000DBE2A /* coolvetica rg.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		63727C6F26FC975100582C5B /* InstagridUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagridUITests.swift; sourceTree = "<group>"; };
 		63727C7126FC975100582C5B /* InstagridUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagridUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		63727C8426FCB58700582C5B /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		63C341EC271898B8000DBE2A /* Bella Safira.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Bella Safira.otf"; path = "../../../../../Downloads/bella_safira/Bella Safira.otf"; sourceTree = "<group>"; };
+		63C341EE27189921000DBE2A /* coolvetica rg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "coolvetica rg.ttf"; path = "../../../../../Downloads/coolvetica/coolvetica rg.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +109,9 @@
 				63727C8026FC977E00582C5B /* View */,
 				63727C7E26FC976B00582C5B /* Model */,
 				63727C4E26FC975000582C5B /* AppDelegate.swift */,
+				63C341EC271898B8000DBE2A /* Bella Safira.otf */,
 				63727C5026FC975000582C5B /* SceneDelegate.swift */,
+				63C341EE27189921000DBE2A /* coolvetica rg.ttf */,
 				63727C5726FC975100582C5B /* Assets.xcassets */,
 				63727C5C26FC975100582C5B /* Info.plist */,
 			);
@@ -259,8 +265,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				634944F22718820B00F9D217 /* LaunchScreen.storyboard in Resources */,
+				63C341ED271898B8000DBE2A /* Bella Safira.otf in Resources */,
 				63727C5826FC975100582C5B /* Assets.xcassets in Resources */,
 				63727C5626FC975000582C5B /* Main.storyboard in Resources */,
+				63C341EF27189921000DBE2A /* coolvetica rg.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
