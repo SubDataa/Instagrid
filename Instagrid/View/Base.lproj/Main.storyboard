@@ -305,7 +305,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIO-bW-UMi">
-                                <rect key="frame" x="376.5" y="12" width="143" height="37"/>
+                                <rect key="frame" x="382" y="12" width="132.5" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="bKm-hm-m49"/>
                                 </constraints>

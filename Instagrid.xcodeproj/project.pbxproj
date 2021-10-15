@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		634944F22718820B00F9D217 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 634944F12718820B00F9D217 /* LaunchScreen.storyboard */; };
+		635FFB5B271968D80026EE79 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635FFB5A271968D80026EE79 /* UIImage.swift */; };
 		63727C4F26FC975000582C5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63727C4E26FC975000582C5B /* AppDelegate.swift */; };
 		63727C5126FC975000582C5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63727C5026FC975000582C5B /* SceneDelegate.swift */; };
 		63727C5326FC975000582C5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63727C5226FC975000582C5B /* ViewController.swift */; };
@@ -16,7 +17,6 @@
 		63727C6626FC975100582C5B /* InstagridTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63727C6526FC975100582C5B /* InstagridTests.swift */; };
 		63727C7026FC975100582C5B /* InstagridUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63727C6F26FC975100582C5B /* InstagridUITests.swift */; };
 		63727C7226FC975100582C5B /* InstagridUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63727C7126FC975100582C5B /* InstagridUITestsLaunchTests.swift */; };
-		63727C8526FCB58700582C5B /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63727C8426FCB58700582C5B /* Image.swift */; };
 		63C341ED271898B8000DBE2A /* Bella Safira.otf in Resources */ = {isa = PBXBuildFile; fileRef = 63C341EC271898B8000DBE2A /* Bella Safira.otf */; };
 		63C341EF27189921000DBE2A /* coolvetica rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63C341EE27189921000DBE2A /* coolvetica rg.ttf */; };
 /* End PBXBuildFile section */
@@ -40,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		634944F12718820B00F9D217 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		635FFB5A271968D80026EE79 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		63727C4B26FC975000582C5B /* Instagrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63727C4E26FC975000582C5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63727C5026FC975000582C5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,7 +53,6 @@
 		63727C6B26FC975100582C5B /* InstagridUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstagridUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63727C6F26FC975100582C5B /* InstagridUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagridUITests.swift; sourceTree = "<group>"; };
 		63727C7126FC975100582C5B /* InstagridUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagridUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		63727C8426FCB58700582C5B /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		63C341EC271898B8000DBE2A /* Bella Safira.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Bella Safira.otf"; path = "../../../../../Downloads/bella_safira/Bella Safira.otf"; sourceTree = "<group>"; };
 		63C341EE27189921000DBE2A /* coolvetica rg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "coolvetica rg.ttf"; path = "../../../../../Downloads/coolvetica/coolvetica rg.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		635FFB59271968B30026EE79 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				635FFB5A271968D80026EE79 /* UIImage.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		63727C4226FC975000582C5B = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +113,7 @@
 		63727C4D26FC975000582C5B /* Instagrid */ = {
 			isa = PBXGroup;
 			children = (
+				635FFB59271968B30026EE79 /* Extension */,
 				63727C8126FC978500582C5B /* Controller */,
 				63727C8026FC977E00582C5B /* View */,
 				63727C7E26FC976B00582C5B /* Model */,
@@ -138,7 +147,6 @@
 		63727C7E26FC976B00582C5B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				63727C8426FCB58700582C5B /* Image.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -294,7 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63727C5326FC975000582C5B /* ViewController.swift in Sources */,
-				63727C8526FCB58700582C5B /* Image.swift in Sources */,
+				635FFB5B271968D80026EE79 /* UIImage.swift in Sources */,
 				63727C4F26FC975000582C5B /* AppDelegate.swift in Sources */,
 				63727C5126FC975000582C5B /* SceneDelegate.swift in Sources */,
 			);
