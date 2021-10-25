@@ -22,14 +22,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet private weak var viewLayout3: UIView!
     @IBOutlet private weak var viewLayout4: UIView!
     
-    @IBOutlet private weak var button1: UIButton!
-    @IBOutlet private weak var button2: UIButton!
-    @IBOutlet private weak var button3: UIButton!
+    @IBOutlet private weak var LayoutButton1: UIButton!
+    @IBOutlet private weak var LayoutButton2: UIButton!
+    @IBOutlet private weak var LayoutButton3: UIButton!
     
     @IBOutlet private weak var swipeLabel: UILabel!
     @IBOutlet private weak var arrowImg: UIImageView!
     
-    // MARK:-
+    // MARK:- Variables
     private var imagePicker = UIImagePickerController()
     private var selectedImage: UIImageView?
     private let btnImage = UIImage(named: "Selected")
@@ -55,8 +55,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         //Default layout
         viewLayout2.isHidden = false
         viewLayout4.isHidden = true
-        button2.setBackgroundImage(btnImage, for: .selected)
-        button2.isSelected = true
+        LayoutButton2.setBackgroundImage(btnImage, for: .selected)
+        LayoutButton2.isSelected = true
         
         
     }
@@ -90,7 +90,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         
     }
-    
+    // MARK:- Set picture
     @IBAction private func setPictureAction(_ sender: UIButton) {
         setPicture(button: sender)
         
@@ -108,42 +108,34 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
-    
+    // MARK:- Select Layout
     @IBAction private func selectedLayout(_ sender: UIButton) {
-        button1.setBackgroundImage(btnImage, for: .selected)
-        button2.setBackgroundImage(btnImage, for: .selected)
-        button3.setBackgroundImage(btnImage, for: .selected)
-        button1.isSelected = false
-        button2.isSelected = false
-        button3.isSelected = false
+        LayoutButton1.setBackgroundImage(btnImage, for: .selected)
+        LayoutButton2.setBackgroundImage(btnImage, for: .selected)
+        LayoutButton3.setBackgroundImage(btnImage, for: .selected)
+        LayoutButton1.isSelected = false
+        LayoutButton2.isSelected = false
+        LayoutButton3.isSelected = false
         
         switch sender.tag {
         case 1:
-            
             viewLayout2.isHidden = true
             viewLayout4.isHidden = false
-            
-            
         case 2:
-            
             viewLayout2.isHidden = false
             viewLayout4.isHidden = true
-            
         case 3:
-            
             viewLayout2.isHidden = false
             viewLayout4.isHidden = false
-            
         default:
             break
         }
-        
         sender.isSelected = true
     }
     
-    
+    // MARK:- Choose Image from Library
     private func setPicture(button: UIButton) {
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){ //guard
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
             imagePicker.delegate = self
             imagePicker.sourceType = .photoLibrary
             imagePicker.allowsEditing = false
@@ -152,7 +144,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             present(imagePicker, animated: true, completion: nil)
         }
     }
-    
+    // MARK:- Set Image from UIImagePickerController
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
@@ -160,7 +152,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         
     }
-    
+    // MARK:- Share Image with UIActivityViewController
     private func shareImage() {
         let img = [UIImage.init(view: self.viewImage)]
         let ac = UIActivityViewController(activityItems: img, applicationActivities: nil)

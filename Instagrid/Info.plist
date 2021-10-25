@@ -6,8 +6,8 @@
 	<string>Our application needs permission to write photos...</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Bella Safira.otf</string>
-		<string>coolvetica rg.ttf</string>
+		<string>Delm-Medium.otf</string>
+		<string>ThirstySoftRegular.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
